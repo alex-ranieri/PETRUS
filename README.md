@@ -30,6 +30,14 @@ PETRUS is a local desktop research workspace that connects a PDF library to sear
 
 **Created and developed by Alex Ranieri Jerônimo Lima. Current source version: 0.4.1-dev. Active development; not a stable public release.**
 
+### Download the macOS app
+
+**[Download PETRUS 0.4.1-dev — Apple Silicon (.dmg, about 34 MiB)](https://github.com/alex-ranieri/PETRUS/releases/download/v0.4.1-dev/PETRUS-0.4.1-dev-macos-arm64.dmg)**
+
+Requires **macOS 14 or newer on an M1 or later Mac**. Open the DMG, drag PETRUS to Applications, then eject the image and launch the app. The Python engine/runtime is included; local AI and GROBID remain optional separate installations.
+
+This is an **experimental prerelease with an ad hoc signature, without Apple notarization**. Read the [bilingual release and installation notes](https://github.com/alex-ranieri/PETRUS/releases/tag/v0.4.1-dev), including first-launch instructions, checksums, validation scope and backup guidance. Intel Mac, Windows and Linux installers are not included.
+
 ### Origin and philosophy
 
 The earliest documented development milestone is **15 October 2026**, recorded in the [initial validation report](docs/validation.md). This is the documented starting point, not a verified date of the first idea or first line of code: this source directory had no Git history when prepared for GitHub.
@@ -102,7 +110,7 @@ The main advantage is the **combination** of local operation, source preservatio
 
 ### Limitations and validation status
 
-- **Platform and distribution:** development and packaging have focused on macOS Apple Silicon. Windows and Linux builds are untested. The local app uses an ad hoc signature and is not an Apple-notarized public release. Generated mobile icons do not indicate mobile support.
+- **Platform and distribution:** development and packaging have focused on macOS Apple Silicon. Windows and Linux builds are untested. The downloadable macOS prerelease has an ad hoc signature and is not notarized by Apple. Generated mobile icons do not indicate mobile support.
 - **PDF extraction:** no OCR. Scanned, encrypted, malformed or complex PDFs can fail or produce incomplete text. The basic parser caps processing at 300 pages and 100,000 characters per page. Metadata, DOI candidates and GROBID output require checking; missing page provenance stays unknown.
 - **Coverage and scale:** no Crossref/OpenAlex discovery or external DOI verification. The graph is capped at 300 recent papers, 2,000 author/collection links per type and 4,000 citations; derived edges have additional limits. The embedding index uses SQLite and NumPy, not a benchmarked large-scale vector service.
 - **AI reliability:** local models can hallucinate, omit evidence or fail the response contract. Validation checks structure and citation identifiers, not scientific entailment. Model and hardware choices affect quality, latency and memory use. Claims and evidence relationships are not judged by AI.
@@ -128,7 +136,7 @@ The repository's manifests and lockfiles specify dependencies. Models, GROBID/JV
 
 ### Run from source
 
-On macOS, install Xcode Command Line Tools, Node.js 22+, Python 3.11+ and stable Rust. From the repository root:
+On macOS 14 or newer, install Xcode Command Line Tools, Node.js 22+, Python 3.11+ and stable Rust. From the repository root:
 
 ```bash
 npm ci
@@ -185,6 +193,14 @@ Current work focuses on consolidating the evidence workspace and validating real
 PETRUS é um ambiente desktop local de pesquisa que conecta uma biblioteca de PDFs a busca textual, relações entre artigos, evidências salvas, trilha de pesquisa e afirmações científicas escritas pelo pesquisador. A IA local é opcional e auxilia a recuperação e a exploração das fontes; a interpretação e as conclusões continuam sob responsabilidade humana.
 
 **Criação e desenvolvimento: Alex Ranieri Jerônimo Lima. Versão do código: 0.4.1-dev. Projeto em desenvolvimento, sem release pública estável.**
+
+### Baixar o aplicativo macOS
+
+**[Baixar PETRUS 0.4.1-dev — Apple Silicon (.dmg, cerca de 34 MiB)](https://github.com/alex-ranieri/PETRUS/releases/download/v0.4.1-dev/PETRUS-0.4.1-dev-macos-arm64.dmg)**
+
+Requer **macOS 14 ou mais recente em Mac M1 ou posterior**. Abra o DMG, arraste PETRUS para Aplicativos, ejete a imagem e abra o app. O pacote inclui engine/runtime Python; IA local e GROBID continuam como instalações opcionais separadas.
+
+Esta é uma **pré-release experimental com assinatura ad hoc, sem notarização Apple**. Leia as [notas bilíngues da release e instalação](https://github.com/alex-ranieri/PETRUS/releases/tag/v0.4.1-dev), incluindo primeira abertura, checksums, escopo da validação e backup. Não inclui instaladores para Mac Intel, Windows ou Linux.
 
 ### Origem e filosofia
 
@@ -294,7 +310,7 @@ São direções futuras, sem disponibilidade atual ou prazo prometido. O [roadma
 
 ### Executar, acompanhar e contribuir
 
-No macOS, instale Command Line Tools, Node.js 22+, Python 3.11+ e Rust estável. Os comandos completos de instalação, execução, banco isolado, build e testes estão em **Run from source**, acima; são os mesmos para ambos os idiomas. `npm run desktop` abre o aplicativo funcional; `npm run dev` inicia somente a interface. Após limpeza, reinstale dependências e regenere artefatos.
+No macOS 14 ou mais recente, instale Command Line Tools, Node.js 22+, Python 3.11+ e Rust estável. Os comandos completos de instalação, execução, banco isolado, build e testes estão em **Run from source**, acima; são os mesmos para ambos os idiomas. `npm run desktop` abre o aplicativo funcional; `npm run dev` inicia somente a interface. Após limpeza, reinstale dependências e regenere artefatos.
 
 Consulte [arquitetura](docs/pt-BR/architecture.md), [banco](docs/pt-BR/database.md), [roadmap](docs/pt-BR/roadmap.md), [GROBID](docs/pt-BR/grobid.md), [internacionalização](docs/pt-BR/i18n.md), [validação de Achados](docs/pt-BR/validation-0.4c-findings-claims.md), [notas históricas](docs/pt-BR/development-history.md).
 
