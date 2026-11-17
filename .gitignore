@@ -1,0 +1,42 @@
+node_modules/
+app/dist/
+src-tauri/target/
+src-tauri/binaries/
+.tools/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+engine/build/
+engine/dist/
+*.spec
+.DS_Store
+.local-data/
+test-results/
+playwright-report/
+
+
+# Local app bundles and private runtime data
+*.app/
+*.dmg
+*.pkg
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Original artwork is already preserved in app/src/assets/petrus-logo.png
+/Pastor Alem*em Rede Digital.png
+
+# Release assets are uploaded to GitHub Releases, not committed
+/release-assets/
+
+# Owner-only publication instructions; never upload this directory
+/.local-docs/

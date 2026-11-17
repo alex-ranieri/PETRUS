@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petrus-engine"
+version = "0.4.1.dev0"
+description = "Local PDF evidence library engine for PETRUS"
+requires-python = ">=3.11"
+dependencies = ["pypdf>=5,<7", "numpy>=2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "pyinstaller>=6,<7"]
+
+[tool.setuptools.packages.find]
+include = ["petrus_engine*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+

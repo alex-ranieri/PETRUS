@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Main PETRUS window: folder chooser and window controls only.","local":true,"windows":["main"],"permissions":["core:default","dialog:allow-open","core:window:allow-start-dragging"]}}

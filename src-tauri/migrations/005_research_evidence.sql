@@ -1,0 +1,32 @@
+-- Human-curated snapshots, independent of derived rows replaced by reprocessing.
+CREATE TABLE research_evidence (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ session_id INTEGER NOT NULL REFERENCES research_sessions(id) ON DELETE CASCADE,
+ paper_id INTEGER REFERENCES papers(id) ON DELETE SET NULL,
+ evidence_fingerprint TEXT NOT NULL,
+ paper_sha256 TEXT NOT NULL,
+ paper_title_snapshot TEXT NOT NULL,
+ paper_doi_snapshot TEXT,
+ evidence_unit_id TEXT NOT NULL,
+ source_span_id INTEGER REFERENCES source_spans(id) ON DELETE SET NULL,
+ section_id INTEGER REFERENCES sections(id) ON DELETE SET NULL,
+ section_heading_snapshot TEXT,
+ evidence_role TEXT NOT NULL,
+ provenance_level TEXT NOT NULL,
+ page_start INTEGER CHECK(page_start IS NULL OR page_start>0),
+ page_end INTEGER CHECK(page_end IS NULL OR page_end>=page_start),
+ supports_paginated_evidence INTEGER NOT NULL CHECK(supports_paginated_evidence IN (0,1)),
+ text_snapshot TEXT NOT NULL,
+ text_sha256 TEXT NOT NULL,
+ source_identity_json TEXT NOT NULL,
+ decision TEXT NOT NULL DEFAULT 'uncertain' CHECK(decision IN ('included','excluded','uncertain')),
+ user_note TEXT NOT NULL DEFAULT '',
+ origin_type TEXT NOT NULL CHECK(origin_type IN ('ask_answer','retrieved_source')),
+ research_event_id INTEGER REFERENCES research_events(id) ON DELETE SET NULL,
+ question_snapshot TEXT,
+ evidence_label_snapshot TEXT,
+ created_at TEXT NOT NULL,
+ updated_at TEXT NOT NULL,
+ UNIQUE(session_id,evidence_fingerprint)
+);
+CREATE INDEX research_evidence_session ON research_evidence(session_id,created_at DESC,id DESC);

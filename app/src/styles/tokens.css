@@ -1,0 +1,94 @@
+:root,
+[data-theme="light"] {
+  --logo-small: 36px;
+  --logo-medium: 56px;
+  --logo-large: 100px;
+  --logo-hero: 160px;
+  color-scheme: light;
+  --bg: #f6f7f4;
+  --sidebar: #edf0ec;
+  --surface: #fcfcfa;
+  --surface-raised: #edf1ed;
+  --panel: #fafbf8;
+  --input: #f4f6f2;
+  --hover: #eaf0eb;
+  --text: #1e3035;
+  --muted: #60716f;
+  --faint: #7c8b85;
+  --border: #dee5dd;
+  --border-strong: #c7d3ca;
+  --teal: #267a76;
+  --teal-bright: #328d86;
+  --on-teal: #fff;
+  --teal-soft: #e5f0e9;
+  --teal-border: #ccdfd6;
+  --nav-active: #dfece4;
+  --gold: #986222;
+  --gold-soft: #f7edde;
+  --blue: #547a9b;
+  --blue-soft: #e6edf5;
+  --peach: #b56148;
+  --peach-soft: #f7e9e2;
+  --graph-edge: #92b5ad;
+  --graph-dot: #dbe4dc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #11191e;
+    --sidebar: #0d1419;
+    --surface: #151e24;
+    --surface-raised: #1b272e;
+    --panel: #141d23;
+    --input: #10191e;
+    --hover: #1a272d;
+    --text: #e2e9e7;
+    --muted: #91a1a5;
+    --faint: #5e737b;
+    --border: #223038;
+    --border-strong: #34454d;
+    --teal: #86c6bb;
+    --teal-bright: #a5d9cd;
+    --on-teal: #102a28;
+    --teal-soft: #192f30;
+    --teal-border: #294548;
+    --nav-active: #1b2b2d;
+    --gold: #d3ac72;
+    --gold-soft: #302a21;
+    --blue: #88a9c7;
+    --blue-soft: #1e2b39;
+    --peach: #d3a18c;
+    --peach-soft: #312720;
+    --graph-edge: #3f626a;
+    --graph-dot: #25333b;
+  }
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #11191e;
+  --sidebar: #0d1419;
+  --surface: #151e24;
+  --surface-raised: #1b272e;
+  --panel: #141d23;
+  --input: #10191e;
+  --hover: #1a272d;
+  --text: #e2e9e7;
+  --muted: #91a1a5;
+  --faint: #5e737b;
+  --border: #223038;
+  --border-strong: #34454d;
+  --teal: #86c6bb;
+  --teal-bright: #a5d9cd;
+  --on-teal: #102a28;
+  --teal-soft: #192f30;
+  --teal-border: #294548;
+  --nav-active: #1b2b2d;
+  --gold: #d3ac72;
+  --gold-soft: #302a21;
+  --blue: #88a9c7;
+  --blue-soft: #1e2b39;
+  --peach: #d3a18c;
+  --peach-soft: #312720;
+  --graph-edge: #3f626a;
+  --graph-dot: #25333b;
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default", "description": "Main PETRUS window: folder chooser and window controls only.",
+  "windows": ["main"],
+  "permissions": ["core:default", "dialog:allow-open", "core:window:allow-start-dragging"]
+}
